@@ -46,7 +46,7 @@ export default function Home() {
                   </Col>
               <Col  className={utilStyles.colRight} sm={9} >
                   <Image fluid priority
-                  src="/images/bg_login.jpg" style={{border:"none", padding:"0rem", height: "100vh"}}></Image>
+                  src="/images/bg_login.jpg" style={{border:"none", padding:"0rem", height: "100vh", width: "100vw"}}></Image>
               </Col>
           </Row>
       </Container>
