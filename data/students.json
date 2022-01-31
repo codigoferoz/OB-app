@@ -1,0 +1,20 @@
+[
+  {"category":"Total","group":"Total","access_to_car":0.88,"altered_rx":0.07,"anxious":0.12,"asthma":0.11,"couldnt_afford_rx":0.09},
+  {"category":"Age","group":"Ages 18-34","access_to_car":0.84,"altered_rx":0.08,"anxious":0.18,"asthma":0.13,"couldnt_afford_rx":0.12},
+  {"category":"Age","group":"Ages 35-49","access_to_car":0.91,"altered_rx":0.07,"anxious":0.11,"asthma":0.12,"couldnt_afford_rx":0.1},
+  {"category":"Age","group":"Ages 50-64","access_to_car":0.92,"altered_rx":0.08,"anxious":0.09,"asthma":0.09,"couldnt_afford_rx":0.09},
+  {"category":"Age","group":"Ages 65+","access_to_car":0.89,"altered_rx":0.03,"anxious":0.1,"asthma":0.07,"couldnt_afford_rx":0.04},
+  {"category":"Race/Ethnicity","group":"White","access_to_car":0.92,"anxious":0.11,"asthma":0.1,"couldnt_afford_rx":0.08},
+  {"category":"Race/Ethnicity","group":"Black","access_to_car":0.77,"anxious":0.13,"asthma":0.11,"couldnt_afford_rx":0.11},
+  {"category":"Race/Ethnicity","group":"Latino","access_to_car":0.78,"anxious":0.2,"asthma":0.17,"couldnt_afford_rx":0.18},
+  {"category":"Education","group":"High school or less","access_to_car":0.77,"altered_rx":0.11,"anxious":0.17,"asthma":0.12,"couldnt_afford_rx":0.12},
+  {"category":"Education","group":"Some college or AA","access_to_car":0.88,"altered_rx":0.08,"anxious":0.14,"asthma":0.12,"couldnt_afford_rx":0.1},
+  {"category":"Education","group":"Bachelor's or higher","access_to_car":0.95,"altered_rx":0.04,"anxious":0.09,"asthma":0.09,"couldnt_afford_rx":0.06},
+  {"category":"Income","group":"Under $15K","access_to_car":0.6,"anxious":0.24,"asthma":0.17,"couldnt_afford_rx":0.16},
+  {"category":"Income","group":"$15K-$30K","access_to_car":0.79,"anxious":0.18,"asthma":0.15,"couldnt_afford_rx":0.14},
+  {"category":"Income","group":"$30K-$50K","access_to_car":0.88,"anxious":0.14,"asthma":0.1,"couldnt_afford_rx":0.1},
+  {"category":"Income","group":"$50K-$75K","access_to_car":0.93,"anxious":0.12,"asthma":0.1,"couldnt_afford_rx":0.1},
+  {"category":"Income","group":"$75K-$100K","access_to_car":0.96,"anxious":0.09,"asthma":0.09,"couldnt_afford_rx":0.09},
+  {"category":"Income","group":"$100K-$200K","access_to_car":0.97,"anxious":0.08,"asthma":0.09,"couldnt_afford_rx":0.05},
+  {"category":"Income","group":"$200K+","access_to_car":0.97,"anxious":0.08,"asthma":0.06,"couldnt_afford_rx":0.04}
+]
