@@ -21,9 +21,40 @@ import { FormSelect,
   Badge
 } from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
-import { WithContext as ReactTags } from "react-tag-input";
-import { SKILLS } from '../data/skills';
 import { Info } from '../data/info';
+import Select from 'react-select'
+import Creatable, { useCreatable } from 'react-select/creatable';
+
+
+
+const skills = [
+  { label: 'ReactJS', value: 'ReactJS' },
+  { label: 'HTML/CSS', value: 'HTML/CSS' },
+  { label: 'Javascript', value: 'Javascript' },
+  { label: 'PHP', value: 'PHP' },
+  { label: 'NodeJS', value: 'NodeJS' },
+  { label: 'Python', value: 'Python' },
+];
+
+const countries = [
+  { label: 'España', value: 'España' },
+  { label: 'USA', value: 'USA' },
+  { label: 'Alemania', value: 'Alemania' },
+  { label: 'Argentina', value: 'Argentina' },
+  { label: 'Uruguay', value: 'Uruguay' },
+  { label: 'Francia', value: 'Francia' },
+];
+
+const cities = [
+  { label: 'Barcelona', value: 'Barcelona' },
+  { label: 'Oregon', value: 'Oregon' },
+  { label: 'Munich', value: 'Munich' },
+  { label: 'Buenos Aires', value: 'Buenos Aires' },
+  { label: 'Montevideo', value: 'Montevideo' },
+  { label: 'Sao Paulo', value: 'Sao Paulo' },
+];
+
+
 
 //Sort section
 
@@ -63,48 +94,9 @@ const useSortableData = (items, config = null) => {
 
 // Tags section
 
-const suggestions = SKILLS.map(skill => {
-  return {
-    id: skill,
-    text: skill
-  };
-});
-
-const KeyCodes = {
-  comma: 188,
-  enter: 13
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 const TablePage = (props) => {
-  const [tags, setTags] = React.useState([
-    { id: 'HTML&CSS', text: 'HTML&CSS' },
-    { id: 'REACT', text: 'REACT' },
-    { id: 'ANGULAR', text: 'ANGULAR' }
-  ]);
 
-  const handleDelete = i => {
-    setTags(tags.filter((tag, index) => index !== i));
-};
-
-const handleAddition = tag => {
-  setTags([...tags, tag]);
-};
-
-const handleDrag = (tag, currPos, newPos) => {
-  const newTags = tags.slice();
-
-  newTags.splice(currPos, 1);
-  newTags.splice(newPos, 0, tag);
-
-  // re-render
-  setTags(newTags);
-};
-
-const handleTagClick = index => {
-  console.log('The tag at index ' + index + ' was clicked');
-};
 
 // Sort table
 
@@ -214,21 +206,12 @@ function MydModalWithGrid(props) {
                 </Row>
                 <Form.Group style={{textAlign:"left"}}>
                   <h6 style={{textAlign:"left", fontSize:"small", marginBottom:"10px", marginTop:"20px"}}>Etiquetas</h6>
-                    <div className="app">
-                        <div>
-                            <ReactTags
-                            tags={tags}
-                            suggestions={suggestions}
-                            delimiters={delimiters}
-                            handleDelete={handleDelete}
-                            handleAddition={handleAddition}
-                            handleDrag={handleDrag}
-                            handleTagClick={handleTagClick}
-                            inputFieldPosition="top"
-                            autocomplete
-                            />
-                        </div>
-                      </div>
+                    <Select
+                      options={skills}
+                      placeholder={'Selecione Etiquetas'}
+                       isMulti
+                      onChange={opt => console.log(opt.label, opt.value)}
+                    />
                 </Form.Group>
             </Col>
           </Row>
@@ -402,41 +385,30 @@ return (
                       {/* inicio tags*/}
                       <Form.Group style={{textAlign:"left"}}>
                         <h6 style={{textAlign:"left", fontSize:"small", marginBottom:"10px", marginTop:"20px"}}>Etiquetas</h6>
-                          <div className="app" className={utilStyles.ReactTags__selected}>
-                            <div>
-                                <ReactTags
-                                tags={tags}
-                                suggestions={suggestions}
-                                delimiters={delimiters}
-                                handleDelete={handleDelete}
-                                handleAddition={handleAddition}
-                                handleDrag={handleDrag}
-                                handleTagClick={handleTagClick}
-                                inputFieldPosition="top"
-                                autocomplete
-                                />
-                            </div>
-                          </div>
+                          <Select
+                            options={skills}
+                            placeholder={'Selecione Etiquetas'}
+                             isMulti
+                            onChange={opt => console.log(opt.label, opt.value)}
+                          />
                       </Form.Group>
                       {/* fin tags*/}
 
                       <Form.Group className="mb-3" style={{textAlign:"left"}}>
                           <Form.Label style={{fontSize:"small", marginBottom:"10px", marginTop:"20px"}}>País</Form.Label>
-                          <Form.Select size="sm" style={{fontSize:"small", color:"gray"}}>
-                            <option>Seleccione el País</option>
-                              <option value="1">España</option>
-                              <option value="2">USA</option>
-                              <option value="3">Brazil</option>
-                          </Form.Select>
+                            <Select
+                              options={countries}
+                              placeholder={'Selecione País'}
+                              onChange={opt => console.log(opt.label, opt.value)}
+                            />
                       </Form.Group>
                       <Form.Group className="mb-3" style={{textAlign:"left"}}>
                           <Form.Label style={{fontSize:"small", marginBottom:"10px", marginTop:"20px"}}>Ciudad</Form.Label>
-                          <Form.Select size="sm" style={{fontSize:"small", color:"gray"}}>
-                            <option>Seleccione la Ciudad</option>
-                              <option value="1">Barcelona</option>
-                              <option value="2">Atlanta</option>
-                              <option value="3">Sao Paulo</option>
-                          </Form.Select>
+                            <Select
+                              options={cities}
+                              placeholder={'Selecione Ciudad'}
+                              onChange={opt => console.log(opt.label, opt.value)}
+                            />
                       </Form.Group>
                       <Form className="mb-3" style={{textAlign:"left", fontSize:"small"}}>
                       <Form.Label style={{marginBottom:"10px", marginTop:"20px"}}>Presencial / a distancia</Form.Label>
